@@ -1,11 +1,11 @@
-import { headers } from "next/headers";
+import Button from "./components/button/Button";
 
 
 
 export default function Home() {
   return (
-    <div className="header">
-      
-    </div>
+    <main className="page-home header">
+      <Button />
+    </main>
   );
 }
