@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Round&display=swap');
+@import "tailwindcss";
+
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background-image: url(/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 19% 45%;
+  background-size: cover;
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: "Nova Round", system-ui; 
+  font-weight: 500;
+  font-style: normal;
+  overflow: hidden;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  font-size: 1.3rem;
+  color: var(--background);
+}
+
+.navbar h2 {
+  font-weight: 600;
+  font-size: 1.55rem;
+}
+
+.nav-list {
+  display: flex;
+  gap: 1rem;
+}
+
+.burger-menu { 
+  position: relative; 
+  display: inline-block; 
+}
+.nav-toggle { 
+  display: none; 
+}
+
+.burger-button {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.burger-bar {
+  width: 22px;
+  height: 2px;
+  background: currentColor;
+  display: block;
+  border-radius: 1px;
+}
+
+.nav {
+  position: absolute;
+  left: 200px;
+  /* top: calc(100% + 8px); */
+  right: 0;
+  width: 150px;
+  height: 35rem;
+  background: white;
+  padding: 8px 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  display: flex;
+  z-index: 50;
+  border-radius: 15px;
+  transition: 1s;
+}
+.nav-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.nav-toggle:checked + .burger-button + .nav { left: -100px; }

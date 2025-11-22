@@ -1,0 +1,11 @@
+import { headers } from "next/headers";
+
+
+
+export default function Home() {
+  return (
+    <div className="header">
+      
+    </div>
+  );
+}
